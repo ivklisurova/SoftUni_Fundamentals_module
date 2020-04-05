@@ -6,7 +6,7 @@ threshold_pattern = r'\d'
 
 threshold_match = re.findall(threshold_pattern, text)
 
-result = 2
+result = 0
 for i in range(len(threshold_match)):
     if i == 0:
         result = int(threshold_match[i])

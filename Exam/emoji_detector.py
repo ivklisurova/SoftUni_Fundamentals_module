@@ -26,5 +26,6 @@ for i in matches:
     emoji_text = i[1]
     for x in range(len(emoji_text)) :
         coolness += ord(emoji_text[x])
+
     if coolness > result:
         print(f'{i[0]}{i[1]}{i[2]}')

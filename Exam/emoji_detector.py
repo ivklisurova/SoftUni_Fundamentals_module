@@ -6,12 +6,9 @@ threshold_pattern = r'\d'
 
 threshold_match = re.findall(threshold_pattern, text)
 
-result = 0
+result = 1
 for i in range(len(threshold_match)):
-    if i == 0:
-        result = int(threshold_match[i])
-    else:
-        result *= int(threshold_match[i])
+    result *= int(threshold_match[i])
 
 print(f'Cool threshold: {result}')
 
@@ -24,8 +21,8 @@ print(f'{len(matches)} emojis found in the text. The cool ones are:')
 for i in matches:
     coolness = 0
     emoji_text = i[1]
-    for x in range(len(emoji_text)) :
+    for x in range(len(emoji_text)):
         coolness += ord(emoji_text[x])
 
-    if coolness > result:
+    if coolness >= result:
         print(f'{i[0]}{i[1]}{i[2]}')
